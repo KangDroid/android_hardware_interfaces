@@ -308,8 +308,11 @@ size_t VendorInterface::Send(uint8_t type, const uint8_t* data, size_t length) {
                                  [this]() { OnTimeout(); });
     // Assert wake.
     lpm_wake_deasserted = false;
-    bt_vendor_lpm_wake_state_t wakeState = BT_VND_LPM_WAKE_ASSERT;
-    lib_interface_->op(BT_VND_OP_LPM_WAKE_SET_STATE, &wakeState);
+    bt_vendor_lpm_wake_state_t wakeState = BT_VND_LPM_WAKE_ASSERT; 
+	// TOP function will be not used(TESTING)
+	
+	// Call OP with SHAMU FIX(TESTING)
+    lib_interface_->op(BT_WORKROUND_SHAMU_FIX, &wakeState);
     ALOGV("%s: Sent wake before (%02x)", __func__, data[0] | (data[1] << 8));
   }
 
