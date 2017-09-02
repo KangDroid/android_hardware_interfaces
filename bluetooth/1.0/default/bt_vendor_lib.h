@@ -200,6 +200,9 @@ typedef enum {
    *      completion of vendor specific setup process once it has been done.
    */
   BT_VND_OP_A2DP_OFFLOAD_STOP,
+  
+  // TESTING SHAMU
+  BT_WORKROUND_SHAMU_FIX,
 
 } bt_vendor_opcode_t;
 
